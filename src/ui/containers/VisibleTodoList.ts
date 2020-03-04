@@ -10,20 +10,15 @@ import { TodoApp, Todo, VisibilityFilter } from '../../state/types/state'
  * @param filter The filter that should be applied to the list.
  */
 const getVisibleTodos = (todos: Todo[], filter: VisibilityFilter): Todo[] => {
+  const active = todos.filter(todo => !todo.completed)
+  const completed = todos.filter(todo => todo.completed)
   switch (filter) {
     case VisibilityFilter.SHOW_ALL:
-      return todos
+      return [...active, ...completed]
     case VisibilityFilter.SHOW_ACTIVE:
-      return todos.filter(todo => !todo.completed)
+      return active
     case VisibilityFilter.SHOW_COMPLETED:
-      return todos
-        .filter(todo => todo.completed)
-        .map(todo => ({
-          ...todo,
-          // If we leave this true, then all the visible todos will have lines
-          // through them.
-          completed: false
-        }))
+      return completed
     default:
       throw new Error(`Unidentified filter: ${filter}`)
   }
