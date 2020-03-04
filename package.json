@@ -1,22 +1,57 @@
 {
   "name": "cra-template-shlappas",
-  "version": "0.1.3",
-  "description": "A Redux/Typescript template for Create React App.",
-  "keywords": [
-    "react",
-    "create-react-app",
-    "template",
-    "typescript",
-    "redux"
-  ],
-  "license": "MIT",
-  "author": {
-    "name": "Chris Milson",
-    "email": "chris.w.milson@gmail.com"
-  },
+  "version": "0.2.0",
+  "main": "template.json",
   "files": [
-    "template",
-    "template.json"
+    "template/"
   ],
-  "main": "template.json"
+  "scripts": {
+    "clean-build": "rm -rf ./template",
+    "copy:source": "mkdir -p template/src && cp -a src/ template/src",
+    "copy:public": "mkdir -p template/public && cp -a public/ template/public",
+    "copy:config": "mkdir -p template && cp -a .eslintrc.js .prettierrc.js template && cp -a .gitignore template/gitignore",
+    "copy:all": "yarn copy:source && yarn copy:public && yarn copy:config",
+    "build:template": "yarn clean-build && yarn copy:all",
+    "prepublishOnly": "yarn build:template",
+    "lint": "eslint src/**/* --ext .tsx,.ts,.jsx,.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.7",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^7.2.0",
+    "react-scripts": "3.4.0",
+    "redux": "^4.0.5",
+    "typescript": "~3.7.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "MIT"
 }
