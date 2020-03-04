@@ -17,5 +17,14 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0
-  }
+  },
+  overrides: [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        // typescript takes care of its own types
+        "react/prop-types": "off"
+      }
+    }
+  ]
 }
