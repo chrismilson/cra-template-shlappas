@@ -3,9 +3,9 @@ import { TodoApp, VisibilityFilter } from '../../state/types/state'
 import Link from '../components/Link'
 import { setVisibilityFilter } from '../../state/actions'
 
-interface OwnProps {
+type OwnProps = React.PropsWithChildren<{
   filter: VisibilityFilter
-}
+}>
 
 export default connect(
   (state: TodoApp, ownProps: OwnProps) => ({
