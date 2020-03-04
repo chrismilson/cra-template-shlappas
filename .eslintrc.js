@@ -11,8 +11,11 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: { jsx: true }
   },
-  ignorePatterns: ['lib', 'node_modules'],
+  ignorePatterns: ['build', 'node_modules'],
   settings: {
     react: { version: 'detect' }
+  },
+  rules: {
+    '@typescript-eslint/explicit-function-return-type': 0
   }
 }
