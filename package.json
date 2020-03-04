@@ -13,5 +13,6 @@
   "author": {
     "name": "Chris Milson",
     "email": "chris.w.milson@gmail.com"
-  }
+  },
+  "files": ["template", "template.json"]
 }
