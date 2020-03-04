@@ -5,7 +5,9 @@
   "keywords": [
     "react",
     "create-react-app",
-    "template"
+    "template",
+    "typescript",
+    "redux"
   ],
   "license": "MIT",
   
