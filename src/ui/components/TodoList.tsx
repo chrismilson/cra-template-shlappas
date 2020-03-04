@@ -1,6 +1,7 @@
 import React from 'react'
 import Todo from './Todo'
 import { Todo as TodoType } from '../../state/types/state'
+import './TodoList.css'
 
 interface Props {
   todos: TodoType[]
