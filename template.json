@@ -20,6 +20,9 @@
       "react-scripts": "3.4.0",
       "redux": "^4.0.5",
       "typescript": "~3.7.2"
+    },
+    "scripts": {
+      "lint": "eslint src/**/* --ext .tsx,.ts,.jsx,.js"
     }
   }
 }
