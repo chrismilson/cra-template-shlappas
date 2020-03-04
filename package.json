@@ -1,6 +1,6 @@
 {
   "name": "cra-template-shlappas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Redux/Typescript template for Create React App.",
   "keywords": [
     "react",
@@ -14,5 +14,8 @@
     "name": "Chris Milson",
     "email": "chris.w.milson@gmail.com"
   },
-  "files": ["template", "template.json"]
+  "files": [
+    "template",
+    "template.json"
+  ]
 }
