@@ -1,8 +1,18 @@
 {
   "name": "cra-template-shlappas",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
+  "main": "template.json",
+  "files": [
+    "template/"
+  ],
   "scripts": {
+    "clean-build": "rm -rf ./template",
+    "copy:source": "mkdir -p template/src && cp -a src/ template/src",
+    "copy:public": "mkdir -p template/public && cp -a public/ template/public",
+    "copy:config": "mkdir -p template && cp -a .eslintrc.js .prettierrc.js template && cp -a .gitignore template/gitignore",
+    "copy:all": "yarn copy:source && yarn copy:public && yarn copy:config",
+    "build:template": "yarn clean-build && yarn copy:all",
+    "prepublishOnly": "yarn build:template",
     "lint": "eslint src/**/* --ext .tsx,.ts,.jsx,.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -41,5 +51,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "license": "MIT"
 }
