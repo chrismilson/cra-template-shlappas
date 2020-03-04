@@ -1,7 +1,12 @@
 import React from 'react'
-import PropTypes, { InferProps } from 'prop-types'
 
-export default function Todo(props: InferProps<typeof Todo.propTypes>) {
+interface Props {
+  onClick: () => void
+  completed: boolean
+  text: string
+}
+
+const Todo: React.FC<Props> = (props: Props) => {
   const { onClick, completed, text } = props
 
   return (
@@ -15,8 +20,4 @@ export default function Todo(props: InferProps<typeof Todo.propTypes>) {
   )
 }
 
-Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
-}
+export default Todo

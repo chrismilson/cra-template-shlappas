@@ -1,9 +1,15 @@
 import React from 'react'
-import PropTypes, { InferProps } from 'prop-types'
 import Todo from './Todo'
+import { Todo as TodoType } from '../../state/types/state'
 
-export default function TodoList(props: InferProps<typeof TodoList.propTypes>) {
+interface Props {
+  todos: TodoType[]
+  toggleTodo: (id: number) => void
+}
+
+const TodoList: React.FC<Props> = props => {
   const { todos, toggleTodo } = props
+
   return (
     <ul className="TodoList">
       {todos.map(todo => (
@@ -13,13 +19,4 @@ export default function TodoList(props: InferProps<typeof TodoList.propTypes>) {
   )
 }
 
-TodoList.propTypes = {
-  todos: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired,
-      completed: PropTypes.bool.isRequired
-    }).isRequired
-  ).isRequired,
-  toggleTodo: PropTypes.func.isRequired
-}
+export default TodoList
