@@ -25,7 +25,7 @@ const TextInput: React.FC<Props> = props => {
           onChange={e => setInput(e.target.value)}
         />
       </label>
-      <input type="submit">Submit</input>
+      <input type="submit" value="Submit" />
     </form>
   )
 }
